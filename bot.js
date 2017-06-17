@@ -2,6 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client();
 const prefix = ">";
 
+//Array for hello command
 var Hello = ["Hi", 
              "Hello", 
              "Bonjour", 
@@ -9,6 +10,7 @@ var Hello = ["Hi",
              "Whats crackalackin", 
              "Wus poppin Jimbo",];
 
+//Get the date and time for the console output
 function dateTime(){
     var today = new Date();
     var dd = today.getDate();
@@ -34,10 +36,14 @@ function dateTime(){
     return String(today);
 }
 
+//Do this once the bot comes online
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
   client.user.setGame('Say >Help')
 });
+
+
+//COMANDS
 
 //Marco Polo
 client.on('message', msg => {
@@ -102,4 +108,6 @@ client.on('message', msg => {
   }
 });
 
+
+//BOT TOKEN 
 client.login('INSERT BOT TOKEN HERE');
